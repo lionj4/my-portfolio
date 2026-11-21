@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import {
   Code,
   X,
@@ -37,7 +38,7 @@ type Project = {
   secondaryLabel?: string;
 };
 
-const cvPath = '/Lionel_Jores_Nyangon_CV.pdf';
+const cvPath = '/Lionel_Jores_Nyangon_Boyomo_Resume.pdf';
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
@@ -143,13 +144,25 @@ export default function Portfolio() {
             <a href="#projects" className="hover:text-cyan-400">Projects</a>
             <a href="#skills" className="hover:text-cyan-400">Skills</a>
             <a href="#connect" className="hover:text-cyan-400">Connect</a>
-            <a href={cvPath} download="Lionel_Jores_Nyangon_CV.pdf" className="px-5 py-2 bg-cyan-400 hover:bg-cyan-300 text-black font-bold rounded-full">CV</a>
+          <a href={cvPath} download="Lionel_Jores_Nyangon_Boyomo_Resume.pdf" className="px-5 py-2 bg-cyan-400 hover:bg-cyan-300 text-black font-bold rounded-full">CV</a>
           </div>
         </div>
       </nav>
 
       <section id="top" className="pt-36 pb-24 px-6 text-center">
         <div className="max-w-6xl mx-auto">
+          <div className="mb-8 flex justify-center">
+            <div className="relative h-36 w-36 overflow-hidden rounded-full border-2 border-cyan-300/70 bg-zinc-950 shadow-[0_0_60px_rgba(34,211,238,0.2)] ring-4 ring-cyan-400/10">
+              <Image
+                src="/lionel-portrait.jpeg"
+                alt="Portrait of Lionel Jores Nyangon Boyomo"
+                fill
+                sizes="144px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
           <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 rounded-full border border-cyan-500/30 bg-cyan-950/40 shadow-[0_0_60px_rgba(34,211,238,0.12)]">
             <Shield className="w-4 h-4 text-cyan-300" />
             <span className="uppercase tracking-widest text-sm text-cyan-100">WEB3 SECURITY ENGINEER & DEFI BUILDER</span>
@@ -163,7 +176,7 @@ export default function Portfolio() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#projects" className="px-7 py-4 rounded-2xl bg-white text-black font-bold hover:bg-cyan-200 transition">View Projects ↓</a>
-            <a href={cvPath} download="Lionel_Jores_Nyangon_CV.pdf" className="px-7 py-4 rounded-2xl border border-cyan-400/50 text-cyan-200 hover:bg-cyan-950/60 transition inline-flex items-center justify-center gap-2">
+            <a href={cvPath} download="Lionel_Jores_Nyangon_Boyomo_Resume.pdf" className="px-7 py-4 rounded-2xl border border-cyan-400/50 text-cyan-200 hover:bg-cyan-950/60 transition inline-flex items-center justify-center gap-2">
               <Download className="w-5 h-5" /> Download CV
             </a>
             <a href="#connect" className="px-7 py-4 rounded-2xl border border-purple-400/40 text-purple-200 hover:bg-purple-950/50 transition">Connect</a>
@@ -283,8 +296,17 @@ export default function Portfolio() {
         <div className="max-w-4xl mx-auto text-center rounded-3xl border border-cyan-400/20 bg-zinc-950/80 p-10">
           <p className="uppercase tracking-[0.3em] text-cyan-400 text-sm mb-3">Resume</p>
           <h2 className="text-4xl font-black mb-4">Curriculum Vitae</h2>
-          <p className="text-gray-400 mb-8">The download button now points to a real hosted PDF file inside the portfolio.</p>
-          <a href={cvPath} download="Lionel_Jores_Nyangon_CV.pdf" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black hover:opacity-90 transition">
+          <div className="mb-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Image
+              src="/lionel-portrait.jpeg"
+              alt="Portrait of Lionel Jores Nyangon Boyomo"
+              width={96}
+              height={96}
+              className="h-24 w-24 rounded-2xl border border-cyan-400/30 object-cover"
+            />
+            <p className="text-gray-400 sm:text-left">Download the latest resume with the updated portrait and experience details.</p>
+          </div>
+          <a href={cvPath} download="Lionel_Jores_Nyangon_Boyomo_Resume.pdf" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black hover:opacity-90 transition">
             <Download className="w-5 h-5" /> Download CV
           </a>
         </div>
